@@ -18,7 +18,7 @@
     </head>
 
     <body>
-        <header class="header">
+        <header class="header header__scroll" id="header">
             <ul class="navbar">
                 <li class="navbar-item">
                     <a href="" class="navbar__link">Home</a>
@@ -33,40 +33,89 @@
         </header>
 
         <main>
-            <section class="section hero-section">
-                <div class="hero-section__icons"></div>
-                <div class="hero-section__text">
-                    <h1 class="hero-section__title">Hi, I am Jose Sanchez</h1>
-                    <h2 class="hero-section__subtitle">Front-End Developer</h2>
-                </div>
-                <div class="hero-section__demos">
-                    <img src="" alt="" />
+            <section class="section hero-section" id="hero-section">
+                <div class="hero-section__icons" id="hero-section__icons"></div>
+                <div class="hero-section__background"></div>
+                <div class="hero-section__info">
+                    <div class="hero-section__text">
+                        <h1 class="hero-section__title">
+                            Hi, I am<br />
+                            <strong
+                                >Jose<br />
+                                Sanchez</strong
+                            >
+                        </h1>
+                        <h2 class="hero-section__subtitle">
+                            Front-End <strong>Developer</strong>
+                        </h2>
+                    </div>
+                    <div class="hero-section__demos">
+                        <div class="hero-section__demo-item--selected">
+                            <img
+                                src="./src/images/valorant.png"
+                                alt="Valorant"
+                            />
+                        </div>
+                        <div class="hero-section__demo-container">
+                            <div class="hero-section__demo-item">
+                                <div class="demo__icon">
+                                    <img
+                                        class="demo__icon--next"
+                                        src="/src/images/next-icon.svg"
+                                        alt="Next"
+                                    />
+                                </div>
+                                <img
+                                    src="/src/images/Rick&Morty.png"
+                                    alt="Rick & Morty"
+                                />
+                            </div>
+                            <div class="hero-section__demo-item">
+                                <div class="demo__icon">
+                                    <img
+                                        class="demo__icon--next"
+                                        src="/src/images/next-icon.svg"
+                                        alt="Next"
+                                    />
+                                </div>
+                                <img
+                                    src="/src/images/Rick&Morty.png"
+                                    alt="Rick & Morty"
+                                />
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
+
             <section class="section about-section">
-                <div class="about-section__text">
-                    <h2>About Me</h2>
-                    <p>
-                        Hello world! I am Jose Sanchez, I am a front-end
-                        developer working with the technologies HTML, CSS,
-                        JavaScript, ReactJs to make the website or web app that
-                        you want as you want.
-                    </p>
-                    <p>
-                        I am from Venezuela, actually studying system
-                        engineering career and working as a freelancer. If you
-                        need someone to make your web, I am here to make it
-                        possible.
-                    </p>
-                </div>
-                <div class="about-section__photo">
-                    <img src="" alt="" />
-                    <img src="" alt="" />
-                    <img src="" alt="" />
+                <h2 class="about-section__title">About <strong>Me</strong></h2>
+                <div class="about-section__container">
+                    <div class="about-section__text">
+                        <p class="about-section__description">
+                            Hello world! I am Jose Sanchez, I am a
+                            <strong>front-end developer</strong> working with
+                            the technologies HTML, CSS, JavaScript, ReactJs to
+                            make the website or web app that you want as you
+                            want.
+                        </p>
+                        <p class="about-section__description">
+                            I am from Venezuela, actually studying system
+                            engineering career and working as a freelancer. If
+                            you need someone to make your web, I am here to
+                            <strong>make it possible.</strong>
+                        </p>
+                    </div>
+                    <div class="about-section__photo">
+                        <img src="" alt="" />
+                        <img src="" alt="" />
+                        <img src="" alt="" />
+                    </div>
                 </div>
             </section>
+
             <section class="section projects-section">
-                <h2>My Projects</h2>
+                <h2 class="projects-section__title">My Projects</h2>
                 <div class="project-grid">
                     <div class="project-container"></div>
                 </div>
@@ -75,4 +124,6 @@
 
         <footer class="footer"></footer>
     </body>
+
+    <script src="./src/scripts/index.js"></script>
 </html>
