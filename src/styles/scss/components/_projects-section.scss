@@ -1,0 +1,10 @@
+.projects-section__title {
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 3rem;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
