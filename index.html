@@ -4,16 +4,75 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="/styles/css/styles.css" />
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- My styles -->
+        <link rel="stylesheet" href="/src/styles/css/styles.css" />
         <title>JRS Portfolio</title>
     </head>
+
     <body>
-        <header class></header>
+        <header class="header">
+            <ul class="navbar">
+                <li class="navbar-item">
+                    <a href="" class="navbar__link">Home</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="" class="navbar__link">About Me</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="" class="navbar__link">Portfolio</a>
+                </li>
+            </ul>
+        </header>
+
         <main>
-            <section class="section"></section>
-            <section class="section"></section>
-            <section class="section"></section>
+            <section class="section hero-section">
+                <div class="hero-section__icons"></div>
+                <div class="hero-section__text">
+                    <h1 class="hero-section__title">Hi, I am Jose Sanchez</h1>
+                    <h2 class="hero-section__subtitle">Front-End Developer</h2>
+                </div>
+                <div class="hero-section__demos">
+                    <img src="" alt="" />
+                </div>
+            </section>
+            <section class="section about-section">
+                <div class="about-section__text">
+                    <h2>About Me</h2>
+                    <p>
+                        Hello world! I am Jose Sanchez, I am a front-end
+                        developer working with the technologies HTML, CSS,
+                        JavaScript, ReactJs to make the website or web app that
+                        you want as you want.
+                    </p>
+                    <p>
+                        I am from Venezuela, actually studying system
+                        engineering career and working as a freelancer. If you
+                        need someone to make your web, I am here to make it
+                        possible.
+                    </p>
+                </div>
+                <div class="about-section__photo">
+                    <img src="" alt="" />
+                    <img src="" alt="" />
+                    <img src="" alt="" />
+                </div>
+            </section>
+            <section class="section projects-section">
+                <h2>My Projects</h2>
+                <div class="project-grid">
+                    <div class="project-container"></div>
+                </div>
+            </section>
         </main>
-        <footer></footer>
+
+        <footer class="footer"></footer>
     </body>
 </html>

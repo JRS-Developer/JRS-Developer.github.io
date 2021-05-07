@@ -1,0 +1,15 @@
+@import './vendors/normalize.scss';
+
+@import './base/base';
+
+@import './config/mixins';
+@import './config/variables';
+
+@import './layout/footer';
+@import './layout/header';
+@import './layout/body';
+
+@import './components/section';
+@import './components/about-section';
+@import './components/hero-section';
+@import './components/projects-section';

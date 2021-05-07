@@ -1,8 +1,0 @@
-.show {
-    display: none;
-
-    @include from(l) {
-        display: block;
-        border: 1px solid black;
-    }
-}
