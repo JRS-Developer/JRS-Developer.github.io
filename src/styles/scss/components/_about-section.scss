@@ -1,12 +1,16 @@
 .about-section {
     padding-top: calc(var(--header-height) + 3rem);
+    min-height: 100vh;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
 }
 
 .about-section__container {
     display: grid;
     height: 100%;
     grid-template-columns: 1fr 1fr;
-    margin-top: -3rem;
 }
 
 .about-section__text {
@@ -20,7 +24,7 @@
 .about-section__title {
     color: var(--primary-color);
     text-align: center;
-    font-size: 3rem;
+    font-size: var(--h1-font-size);
     grid-column: 1/3;
 }
 
@@ -30,7 +34,7 @@
 
 .about-section__description {
     color: var(--primary-color);
-    font-size: 1.5rem;
+    font-size: var(--h3-font-size);
     padding-left: 4rem;
 }
 

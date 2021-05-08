@@ -4,12 +4,17 @@
 }
 
 .hero-section__background {
+    display: none;
     position: absolute;
     background-color: var(--primary-color-alt);
     clip-path: polygon(0 40%, 0% 100%, 100% 100%, 100% 480px);
     height: 100%;
     width: 100%;
     top: 0;
+
+    @include from(m) {
+        display: block;
+    }
 }
 
 .hero-section__icons {
@@ -17,31 +22,76 @@
     width: 100%;
     height: 100%;
     top: 0;
-    background: url('/src/images/background-tech.svg');
+    background-image: linear-gradient(
+            0deg,
+            var(--body-bg-color) 30%,
+            rgba(9, 9, 121, 0) 75%
+        ),
+        url('/src/images/background-tech.svg');
     opacity: 0.5;
 }
 
 .hero-section__info {
     height: 100%;
     position: relative;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: auto;
+
+    @include from(s) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 .hero-section__text {
     color: var(--primary-color);
     place-self: center;
-    margin-top: 4rem;
+    height: 50%;
+    width: 100%;
+    margin-left: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include from(s) {
+        margin-top: 4rem;
+        margin-left: 0;
+        width: auto;
+        height: auto;
+        display: block;
+    }
 }
 
 .hero-section__title {
-    font-size: 5rem;
+    font-size: var(--big-font-size);
+    margin-bottom: 1rem;
+
+    @include from(s) {
+        margin-bottom: 1rem;
+    }
+}
+
+.hero-section__title > br:first-of-type {
+    display: none;
+
+    @include from(s) {
+        display: inline;
+    }
 }
 
 .hero-section__title > strong {
-    color: var(--body-bg-color);
+    color: var(--primary-color-alt);
+
+    @include from(m) {
+        color: var(--body-bg-color);
+    }
 }
 
 .hero-section__subtitle > strong {
-    color: var(--body-bg-color);
+    color: var(--primary-color-alt);
+
+    @include from(m) {
+        color: var(--body-bg-color);
+    }
 }

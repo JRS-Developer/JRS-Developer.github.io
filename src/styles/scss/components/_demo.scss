@@ -3,10 +3,19 @@
     justify-content: center;
     align-items: center;
     position: relative;
+    height: 50%;
+    width: 100%;
+    margin-bottom: 1rem;
+
+    @include from(s) {
+        height: auto;
+        width: auto;
+        margin-bottom: 0;
+    }
 }
 
 .hero-section__demo-container {
-    display: flex;
+    display: none;
     margin-bottom: 1rem;
     position: absolute;
     left: 85%;
@@ -14,6 +23,10 @@
     min-height: 220px;
     min-width: 550px;
     align-items: center;
+
+    @include from(m) {
+        display: flex;
+    }
 }
 
 .hero-section__demo-item {
@@ -30,16 +43,22 @@
 .hero-section__demo-item--selected {
     border-radius: 10px;
     overflow: hidden;
-    width: 500px;
-    height: 220px;
-    margin-bottom: 1rem;
-    margin-right: 5rem;
-    position: absolute;
+    width: 90%;
+    height: 200px;
     left: 2rem;
-    transform: skew(00deg, 10deg);
+    transform: skew(00deg, 15deg);
     cursor: pointer;
     animation: UpAndDown 3s infinite ease-in-out;
     -webkit-animation: UpAndDown 3s infinite ease-in-out;
+
+    @include from(s) {
+        margin-bottom: 1rem;
+        margin-right: 5rem;
+        position: absolute;
+        width: 500px;
+        height: 220px;
+        transform: skew(00deg, 10deg);
+    }
 }
 
 .hero-section__demo-item--unselected {

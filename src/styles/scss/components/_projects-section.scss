@@ -5,15 +5,19 @@
 .projects-section__title {
     text-align: center;
     color: var(--primary-color);
-    font-size: 3rem;
+    font-size: var(--h1-font-size);
 }
 
 .project-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: auto;
     place-items: center;
     margin-top: 4rem;
     gap: 2rem;
+
+    @include from(m) {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 .project-container {
@@ -78,7 +82,7 @@
 }
 
 .project__visit {
-    font-size: 2rem;
+    font-size: var(--h2-font-size);
     color: var(--primary-color-alt);
     font-weight: 600;
     transition: transform 1s;

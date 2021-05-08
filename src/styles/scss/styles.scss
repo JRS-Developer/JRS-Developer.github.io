@@ -1,10 +1,10 @@
 @import './vendors/normalize.scss';
 
-@import './base/base';
-
 @import './config/mixins';
 @import './config/variables';
 @import './config/keyframes';
+
+@import './base/base';
 
 @import './layout/footer';
 @import './layout/header';

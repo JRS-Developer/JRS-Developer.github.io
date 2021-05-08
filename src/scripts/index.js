@@ -184,7 +184,7 @@ const ShowProjects = () => {
 
         // Se coloca un boton para visitar el proyecto
         const ProjectVisit = `
-        <a href=${project.link} class="project__visit">Visit Project</a>
+        <a href=${project.link} target="_blank" class="project__visit">Visit Project</a>
         `;
         ProjectInfo.insertAdjacentHTML('beforeend', ProjectVisit);
 
