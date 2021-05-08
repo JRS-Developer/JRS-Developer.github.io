@@ -1,0 +1,26 @@
+.toogle {
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 1rem;
+
+    @include from(s) {
+        display: none;
+    }
+}
+
+.toogle__icon {
+    flex: 0;
+}
+
+.toogle-close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 1rem;
+    border-radius: 100%;
+}
+
+.toogle-close:active {
+    background-color: rgba(0, 0, 0, 0.5);
+}

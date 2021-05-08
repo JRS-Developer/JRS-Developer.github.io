@@ -21,23 +21,46 @@
         <header class="header" id="header">
             <ul class="navbar">
                 <li class="navbar-item">
-                    <a href="" class="navbar__link">Home</a>
+                    <a href="#" class="navbar__link">Home</a>
                 </li>
                 <li class="navbar-item">
-                    <a href="" class="navbar__link">About Me</a>
+                    <a href="#about" class="navbar__link">About Me</a>
                 </li>
                 <li class="navbar-item">
-                    <a href="" class="navbar__link">Portfolio</a>
+                    <a href="#portfolio" class="navbar__link">Portfolio</a>
                 </li>
             </ul>
             <div class="toogle">
                 <img
                     class="toogle__icon"
+                    id="toogle__icon"
                     src="/src/images/open-toogle.svg"
                     alt="Open"
                 />
             </div>
         </header>
+
+        <nav class="nav-mobile" id="nav-mobile">
+            <div class="toogle-close" id="toogle-close">
+                <img
+                    src="/src/images/close-toogle.svg"
+                    class="toogle__icon--close"
+                />
+            </div>
+            <ul class="navbar-mobile">
+                <li class="navbar-mobile-item">
+                    <a href="#" class="navbar-mobile__link">Home</a>
+                </li>
+                <li class="navbar-mobile-item">
+                    <a href="#about" class="navbar-mobile__link">About Me</a>
+                </li>
+                <li class="navbar-mobile-item">
+                    <a href="#portfolio" class="navbar-mobile__link"
+                        >Portfolio</a
+                    >
+                </li>
+            </ul>
+        </nav>
 
         <main>
             <section class="section hero-section" id="hero-section">
@@ -62,7 +85,7 @@
                 </div>
             </section>
 
-            <section class="section about-section">
+            <section class="section about-section" id="about">
                 <h2 class="about-section__title">About <strong>Me</strong></h2>
                 <div class="about-section__container">
                     <div class="about-section__text">
@@ -88,7 +111,7 @@
                 </div>
             </section>
 
-            <section class="section projects-section">
+            <section class="section projects-section" id="portfolio">
                 <h2 class="projects-section__title">My Projects</h2>
                 <div class="project-grid"></div>
             </section>
@@ -99,4 +122,6 @@
 
     <script type="module" src="./src/scripts/projects.js"></script>
     <script type="module" src="./src/scripts/index.js"></script>
+    <script src="./src/scripts/menu.js"></script>
+    <script src="./src/scripts/toogle.js"></script>
 </html>

@@ -33,6 +33,11 @@
     opacity: 0.8;
 }
 
+.navbar__link--active {
+    color: var(--primary-color-alt);
+    opacity: 1;
+}
+
 .navbar__link:hover {
     color: var(--primary-color-alt);
     opacity: 1;
