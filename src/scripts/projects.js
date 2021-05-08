@@ -21,6 +21,10 @@ const Projects = [
                 name: 'React',
                 image: '/src/images/React.svg',
             },
+            {
+                name: 'Sass',
+                image: '/src/images/Sass.png',
+            },
         ],
         link: 'https://jrs-developer.github.io/valorant/',
     },
@@ -43,8 +47,12 @@ const Projects = [
                 image: '/src/images/CSS.png',
             },
             {
-                name: 'React',
-                image: '/src/images/React.svg',
+                name: 'JavaScript',
+                image: '/src/images/JavaScript.png',
+            },
+            {
+                name: 'Sass',
+                image: '/src/images/Sass.png',
             },
         ],
         link: 'https://jrs-developer.github.io/rick-morty/',
@@ -68,8 +76,12 @@ const Projects = [
                 image: '/src/images/CSS.png',
             },
             {
-                name: 'React',
-                image: '/src/images/React.svg',
+                name: 'JavaScript',
+                image: '/src/images/JavaScript.png',
+            },
+            {
+                name: 'Sass',
+                image: '/src/images/Sass.png',
             },
         ],
         link: 'https://jrs-developer.github.io/shopping-cart/',
