@@ -10,7 +10,10 @@
 .about-section__container {
     display: grid;
     height: 100%;
-    grid-template-columns: 1fr 1fr;
+
+    @include from(m) {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 .about-section__text {
@@ -35,7 +38,12 @@
 .about-section__description {
     color: var(--primary-color);
     font-size: var(--h3-font-size);
-    padding-left: 4rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+
+    @include from(m) {
+        padding-left: 4rem;
+    }
 }
 
 .about-section__description > strong {

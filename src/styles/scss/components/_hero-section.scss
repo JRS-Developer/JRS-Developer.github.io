@@ -7,13 +7,22 @@
     display: none;
     position: absolute;
     background-color: var(--primary-color-alt);
-    clip-path: polygon(0 40%, 0% 100%, 100% 100%, 100% 480px);
     height: 100%;
     width: 100%;
     top: 0;
+    clip-path: polygon(0 38%, 0% 100%, 100% 100%, 100% 440px);
 
     @include from(m) {
         display: block;
+        clip-path: polygon(0 40%, 0% 100%, 100% 100%, 100% 500px);
+    }
+
+    @include from(l) {
+        clip-path: polygon(0 40%, 0% 100%, 100% 100%, 100% 480px);
+    }
+
+    @include from(lx) {
+        clip-path: polygon(0 40%, 0% 100%, 100% 100%, 100% 520px);
     }
 }
 
@@ -55,6 +64,14 @@
     justify-content: center;
 
     @include from(s) {
+        margin-top: 0;
+        margin-left: 0;
+        width: auto;
+        height: auto;
+        display: block;
+    }
+
+    @include from(m) {
         margin-top: 4rem;
         margin-left: 0;
         width: auto;

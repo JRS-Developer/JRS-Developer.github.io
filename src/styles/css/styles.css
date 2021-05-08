@@ -391,13 +391,16 @@ body {
   transition: background-color 0.5s; }
 
 .navbar {
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: flex-end;
   padding-right: 2rem;
   list-style: none;
   gap: 1rem;
   height: 100%; }
+  @media screen and (min-width: 640px) {
+    .navbar {
+      display: flex; } }
 
 .navbar-item {
   height: 100%; }
@@ -436,8 +439,10 @@ main {
 
 .about-section__container {
   display: grid;
-  height: 100%;
-  grid-template-columns: 1fr 1fr; }
+  height: 100%; }
+  @media screen and (min-width: 768px) {
+    .about-section__container {
+      grid-template-columns: 1fr 1fr; } }
 
 .about-section__text {
   display: flex;
@@ -458,7 +463,11 @@ main {
 .about-section__description {
   color: var(--primary-color);
   font-size: var(--h3-font-size);
-  padding-left: 4rem; }
+  padding-left: 2rem;
+  padding-right: 2rem; }
+  @media screen and (min-width: 768px) {
+    .about-section__description {
+      padding-left: 4rem; } }
 
 .about-section__description > strong {
   color: var(--primary-color-alt); }
@@ -471,13 +480,20 @@ main {
   display: none;
   position: absolute;
   background-color: var(--primary-color-alt);
-  clip-path: polygon(0 40%, 0% 100%, 100% 100%, 100% 480px);
   height: 100%;
   width: 100%;
-  top: 0; }
+  top: 0;
+  clip-path: polygon(0 38%, 0% 100%, 100% 100%, 100% 440px); }
   @media screen and (min-width: 768px) {
     .hero-section__background {
-      display: block; } }
+      display: block;
+      clip-path: polygon(0 40%, 0% 100%, 100% 100%, 100% 500px); } }
+  @media screen and (min-width: 1024px) {
+    .hero-section__background {
+      clip-path: polygon(0 40%, 0% 100%, 100% 100%, 100% 480px); } }
+  @media screen and (min-width: 1200px) {
+    .hero-section__background {
+      clip-path: polygon(0 40%, 0% 100%, 100% 100%, 100% 520px); } }
 
 .hero-section__icons {
   position: absolute;
@@ -508,6 +524,13 @@ main {
   flex-direction: column;
   justify-content: center; }
   @media screen and (min-width: 640px) {
+    .hero-section__text {
+      margin-top: 0;
+      margin-left: 0;
+      width: auto;
+      height: auto;
+      display: block; } }
+  @media screen and (min-width: 768px) {
     .hero-section__text {
       margin-top: 4rem;
       margin-left: 0;
@@ -558,7 +581,7 @@ main {
   display: none;
   margin-bottom: 1rem;
   position: absolute;
-  left: 85%;
+  left: 88%;
   margin-top: 6rem;
   min-height: 220px;
   min-width: 550px;
@@ -566,6 +589,9 @@ main {
   @media screen and (min-width: 768px) {
     .hero-section__demo-container {
       display: flex; } }
+  @media screen and (min-width: 1200px) {
+    .hero-section__demo-container {
+      left: 85%; } }
 
 .hero-section__demo-item {
   position: relative;
@@ -573,21 +599,47 @@ main {
   align-items: center;
   border-radius: 10px;
   overflow: hidden;
-  width: 500px;
-  height: 220px;
+  width: 280px;
+  height: auto;
   transition: transform 0.5s; }
+  @media screen and (min-width: 768px) {
+    .hero-section__demo-item {
+      height: 130px; } }
+  @media screen and (min-width: 1024px) {
+    .hero-section__demo-item {
+      width: 500px;
+      height: 220px; } }
 
 .hero-section__demo-item--selected {
   border-radius: 10px;
   overflow: hidden;
-  width: 90%;
-  height: 200px;
+  width: 85%;
+  height: auto;
   left: 2rem;
   transform: skew(0deg, 15deg);
   cursor: pointer;
   animation: UpAndDown 3s infinite ease-in-out;
   -webkit-animation: UpAndDown 3s infinite ease-in-out; }
   @media screen and (min-width: 640px) {
+    .hero-section__demo-item--selected {
+      margin-bottom: 0;
+      margin-right: 0;
+      position: absolute;
+      width: 80%;
+      height: auto;
+      transform: skew(0deg, 10deg); } }
+  @media screen and (min-width: 768px) {
+    .hero-section__demo-item--selected {
+      width: 330px;
+      height: 150px;
+      transform: skew(0deg, 15deg);
+      margin-right: 5rem; } }
+  @media screen and (min-width: 1024px) {
+    .hero-section__demo-item--selected {
+      width: 400px;
+      height: 220px;
+      transform: skew(0deg, 12deg); } }
+  @media screen and (min-width: 1200px) {
     .hero-section__demo-item--selected {
       margin-bottom: 1rem;
       margin-right: 5rem;
@@ -597,16 +649,7 @@ main {
       transform: skew(0deg, 10deg); } }
 
 .hero-section__demo-item--unselected {
-  border-radius: 10px;
-  overflow: hidden;
-  width: 500px;
-  height: 220px;
-  margin-bottom: 0;
-  margin-right: 5rem;
-  position: absolute;
-  left: 2rem;
-  transform: skew(0deg, 10deg) scale(0.5);
-  filter: brightness(30%); }
+  display: none; }
 
 .hero-section__demo-item > img {
   width: 100%;
@@ -669,10 +712,15 @@ main {
 .project-container {
   position: relative;
   width: 90%;
-  height: 250px;
+  height: auto;
   border-radius: 20px;
   border: 3px solid var(--primary-color);
-  overflow: hidden; }
+  overflow: hidden;
+  transition: all 1s; }
+
+.project-container:hover {
+  transform: translate(-5px, -5px);
+  transition: all 1s; }
 
 .project__img {
   width: 100%;
@@ -687,20 +735,26 @@ main {
   top: 0;
   left: 0;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
   justify-content: center;
   align-items: center;
   transition: all 1s;
   opacity: 0; }
+  @media screen and (min-width: 1200px) {
+    .project-container__info {
+      gap: 2rem; } }
 
 .project-container__info:hover {
   opacity: 1;
   transition: all 1s; }
 
 .project-technologies {
-  display: grid;
+  display: none;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 1rem; }
+  @media screen and (min-width: 1024px) {
+    .project-technologies {
+      display: grid; } }
 
 .project-technology {
   display: flex;
@@ -715,12 +769,17 @@ main {
 .project-technology__img {
   height: 100px; }
 
-.project-technology:hover, .project__visit:hover {
+.project-technology:hover, .project__visit__container:hover {
   transform: translateY(-5px);
+  transition: transform 1s; }
+
+.project__visit__container {
+  background-color: var(--primary-color);
+  border-radius: 30px;
+  padding: 1rem 2rem;
   transition: transform 1s; }
 
 .project__visit {
   font-size: var(--h2-font-size);
   color: var(--primary-color-alt);
-  font-weight: 600;
-  transition: transform 1s; }
+  font-weight: 600; }
