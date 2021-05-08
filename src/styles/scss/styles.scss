@@ -4,6 +4,7 @@
 
 @import './config/mixins';
 @import './config/variables';
+@import './config/keyframes';
 
 @import './layout/footer';
 @import './layout/header';
@@ -12,4 +13,5 @@
 @import './components/section';
 @import './components/about-section';
 @import './components/hero-section';
+@import './components/demo';
 @import './components/projects-section';

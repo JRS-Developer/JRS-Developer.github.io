@@ -18,7 +18,7 @@
     </head>
 
     <body>
-        <header class="header header__scroll" id="header">
+        <header class="header" id="header">
             <ul class="navbar">
                 <li class="navbar-item">
                     <a href="" class="navbar__link">Home</a>
@@ -50,40 +50,7 @@
                         </h2>
                     </div>
                     <div class="hero-section__demos">
-                        <div class="hero-section__demo-item--selected">
-                            <img
-                                src="./src/images/valorant.png"
-                                alt="Valorant"
-                            />
-                        </div>
-                        <div class="hero-section__demo-container">
-                            <div class="hero-section__demo-item">
-                                <div class="demo__icon">
-                                    <img
-                                        class="demo__icon--next"
-                                        src="/src/images/next-icon.svg"
-                                        alt="Next"
-                                    />
-                                </div>
-                                <img
-                                    src="/src/images/Rick&Morty.png"
-                                    alt="Rick & Morty"
-                                />
-                            </div>
-                            <div class="hero-section__demo-item">
-                                <div class="demo__icon">
-                                    <img
-                                        class="demo__icon--next"
-                                        src="/src/images/next-icon.svg"
-                                        alt="Next"
-                                    />
-                                </div>
-                                <img
-                                    src="/src/images/Rick&Morty.png"
-                                    alt="Rick & Morty"
-                                />
-                            </div>
-                        </div>
+                        <div class="hero-section__demo-container"></div>
                     </div>
                 </div>
             </section>
@@ -117,7 +84,9 @@
             <section class="section projects-section">
                 <h2 class="projects-section__title">My Projects</h2>
                 <div class="project-grid">
-                    <div class="project-container"></div>
+                    <div class="project-container">
+                        <img class="project__img" src="/src/images/valorant.png" alt="" />
+                    </div>
                 </div>
             </section>
         </main>
@@ -125,5 +94,6 @@
         <footer class="footer"></footer>
     </body>
 
-    <script src="./src/scripts/index.js"></script>
+    <script type="module" src="./src/scripts/projects.js"></script>
+    <script type="module" src="./src/scripts/index.js"></script>
 </html>

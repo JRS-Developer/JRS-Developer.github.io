@@ -1,0 +1,103 @@
+.hero-section__demos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.hero-section__demo-container {
+    display: flex;
+    margin-bottom: 1rem;
+    position: absolute;
+    left: 85%;
+    margin-top: 6rem;
+    min-height: 220px;
+    min-width: 550px;
+    align-items: center;
+}
+
+.hero-section__demo-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 500px;
+    height: 220px;
+    transition: transform 0.5s;
+}
+
+.hero-section__demo-item--selected {
+    border-radius: 10px;
+    overflow: hidden;
+    width: 500px;
+    height: 220px;
+    margin-bottom: 1rem;
+    margin-right: 5rem;
+    position: absolute;
+    left: 2rem;
+    transform: skew(00deg, 10deg);
+    cursor: pointer;
+    animation: UpAndDown 3s infinite ease-in-out;
+    -webkit-animation: UpAndDown 3s infinite ease-in-out;
+}
+
+.hero-section__demo-item--unselected {
+    border-radius: 10px;
+    overflow: hidden;
+    width: 500px;
+    height: 220px;
+    margin-bottom: 0;
+    margin-right: 5rem;
+    position: absolute;
+    left: 2rem;
+    transform: skew(00deg, 10deg) scale(0.5);
+    filter: brightness(30%);
+}
+
+.hero-section__demo-item > img {
+    width: 100%;
+    height: 100%;
+}
+
+.hero-section__demo-item--selected > img {
+    width: 100%;
+    height: 100%;
+}
+
+.hero-section__demo-item--selected > .demo__icon {
+    display: none;
+}
+
+.hero-section__demo-item:hover {
+    transform: translateY(-1px);
+    transition: transform 0.5s;
+}
+
+.demo__icon {
+    position: absolute;
+    left: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-color);
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+    cursor: pointer;
+    z-index: var(--z-normal);
+}
+
+.demo__icon {
+    transition: transform 0.4s;
+}
+
+.demo__icon:hover {
+    transform: translateY(-3px);
+    transition: transform 0.4s;
+}
+
+.demo__icon--back > img {
+    height: 25px;
+    width: 25px;
+}
