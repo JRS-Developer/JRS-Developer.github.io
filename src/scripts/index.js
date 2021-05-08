@@ -1,7 +1,11 @@
+// Imports
 import Projects from './projects.js';
+
+// Variables
 const Header = document.getElementById('header');
 const DemosContainer = document.querySelector('.hero-section__demo-container');
 const AllDemos = document.querySelector('.hero-section__demos');
+const ProjectGrid = document.querySelector('.project-grid');
 const PrincipalTheme = {
     colors: {
         primary: '#ffff',
@@ -10,15 +14,19 @@ const PrincipalTheme = {
     },
 };
 
+// Events
+
 document.addEventListener('DOMContentLoaded', () => {
     ChangeHeader();
     AddProjects();
+    ShowProjects();
 });
 
 document.addEventListener('scroll', () => {
     ChangeHeader();
 });
 
+// Functions
 const ChangeHeader = () => {
     if (window.scrollY > 200) {
         Header.classList.add('header__scroll');
@@ -141,4 +149,54 @@ const ReplaceProject = (demo, icon) => {
     DemosContainer.insertAdjacentElement('beforebegin', demo);
 
     StartFromBegin();
+};
+
+// #PROJECTS SECTION
+
+const ShowProjects = () => {
+    Projects.forEach((project) => {
+        // Se crean los divs
+        const Container = document.createElement('div');
+        Container.className = 'project-container';
+        const ProjectInfo = document.createElement('div');
+        ProjectInfo.className = 'project-container__info';
+        const ProjectTechnologies = document.createElement('div');
+        ProjectTechnologies.className = 'project-technologies';
+
+        // Se crean los elementos de cada tecnologia que posea el proyecto
+        project.tech.forEach((tech) => {
+            const TechInfo = `
+            <div class="project-technology">
+                                    <img
+                                        class="project-technology__img"
+                                        src=${tech.image}
+                                        alt=${tech.name}
+                                    />
+                                </div>
+            `;
+            ProjectTechnologies.insertAdjacentHTML('beforeend', TechInfo);
+        });
+
+        // Se incertan los elementos
+        ProjectInfo.appendChild(ProjectTechnologies);
+        Container.appendChild(ProjectInfo);
+        ProjectGrid.appendChild(Container);
+
+        // Se coloca un boton para visitar el proyecto
+        const ProjectVisit = `
+        <a href=${project.link} class="project__visit">Visit Project</a>
+        `;
+        ProjectInfo.insertAdjacentHTML('beforeend', ProjectVisit);
+
+        // Se coloca la imagen del proyecto
+        const ProjectImage = `
+        <img
+                            class="project__img"
+                            src=${project.image}
+                            alt=${project.name}
+                        />
+        `;
+
+        Container.insertAdjacentHTML('beforeend', ProjectImage);
+    });
 };

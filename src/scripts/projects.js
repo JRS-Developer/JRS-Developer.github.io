@@ -8,6 +8,21 @@ const Projects = [
             alt: '#ff4656',
             background: '#1f2326',
         },
+        tech: [
+            {
+                name: 'HTML',
+                image: '/src/images/HTML.png',
+            },
+            {
+                name: 'CSS',
+                image: '/src/images/CSS.png',
+            },
+            {
+                name: 'React',
+                image: '/src/images/React.svg',
+            },
+        ],
+        link: 'https://jrs-developer.github.io/valorant/',
     },
     {
         id: 'rick',
@@ -18,6 +33,21 @@ const Projects = [
             alt: '#00B0C8',
             background: '#290931',
         },
+        tech: [
+            {
+                name: 'HTML',
+                image: '/src/images/HTML.png',
+            },
+            {
+                name: 'CSS',
+                image: '/src/images/CSS.png',
+            },
+            {
+                name: 'React',
+                image: '/src/images/React.svg',
+            },
+        ],
+        link: 'https://jrs-developer.github.io/rick-morty/',
     },
     {
         id: 'cart',
@@ -28,6 +58,21 @@ const Projects = [
             alt: 'hsl(357, 71%, 34%)',
             background: 'hsla(177, 44%, 10%, 1)',
         },
+        tech: [
+            {
+                name: 'HTML',
+                image: '/src/images/HTML.png',
+            },
+            {
+                name: 'CSS',
+                image: '/src/images/CSS.png',
+            },
+            {
+                name: 'React',
+                image: '/src/images/React.svg',
+            },
+        ],
+        link: 'https://jrs-developer.github.io/shopping-cart/',
     },
 ];
 
