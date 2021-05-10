@@ -62,9 +62,9 @@ const Projects = [
         name: 'Shopping-Cart',
         image: '/src/images/shopping-cart.png',
         colors: {
-            primary: '#ffff',
-            alt: 'hsl(357, 71%, 34%)',
-            background: 'hsla(177, 44%, 10%, 1)',
+            primary: '#f8f9fa',
+            alt: '#d90429',
+            background: '#212529',
         },
         tech: [
             {
