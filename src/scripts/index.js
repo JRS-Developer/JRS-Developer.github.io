@@ -6,6 +6,7 @@ const Header = document.getElementById('header');
 const DemosContainer = document.querySelector('.hero-section__demo-container');
 const AllDemos = document.querySelector('.hero-section__demos');
 const ProjectGrid = document.querySelector('.project-grid');
+const HeroIcons = document.getElementById('hero-section__icons');
 const PrincipalTheme = {
     colors: {
         primary: '#ffff',
@@ -24,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('scroll', () => {
     ChangeHeader();
+    MoveBackgroundIcons();
 });
 
 // Functions
@@ -201,4 +203,10 @@ const ShowProjects = () => {
 
         Container.insertAdjacentHTML('beforeend', ProjectImage);
     });
+};
+
+const MoveBackgroundIcons = () => {
+    if (window.scrollY < 100) {
+        HeroIcons.style.transform = `translateY(${window.scrollY}px)`;
+    }
 };
