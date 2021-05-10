@@ -63,6 +63,7 @@
     cursor: pointer;
     animation: UpAndDown 3s infinite ease-in-out;
     -webkit-animation: UpAndDown 3s infinite ease-in-out;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.3);
 
     @include from(s) {
         margin-bottom: 0;

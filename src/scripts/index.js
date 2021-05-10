@@ -13,6 +13,10 @@ const PrincipalTheme = {
         alt: '#ff9f1c',
         background: '#001427',
     },
+    font: {
+        title: "'Rubik', sans-serif",
+        body: "'Rubik', sans-serif"
+    }
 };
 
 // Events
@@ -85,9 +89,16 @@ const AddProjects = () => {
 
 const ChangeTheme = (Changer) => {
     const root = document.documentElement;
+    // Colors
     root.style.setProperty('--primary-color', Changer.colors.primary);
     root.style.setProperty('--primary-color-alt', Changer.colors.alt);
     root.style.setProperty('--body-bg-color', Changer.colors.background);
+
+    // Fonts
+    root.style.setProperty('--body-font', Changer.font.body);
+    root.style.setProperty('--title-font', Changer.font.title);
+
+    
 };
 
 const ChangeProject = () => {
@@ -206,7 +217,7 @@ const ShowProjects = () => {
 };
 
 const MoveBackgroundIcons = () => {
-    if (window.scrollY < 100) {
+    if (window.scrollY < 200) {
         HeroIcons.style.transform = `translateY(${window.scrollY}px)`;
     }
 };

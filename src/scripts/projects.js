@@ -3,6 +3,10 @@ const Projects = [
         id: 'valorant',
         name: 'Valorant',
         image: '/src/images/valorant.png',
+        font: {
+            title: "'Druk Wide Medium', sans-serif",
+            body: "'Montserrat', sans-serif"
+        },
         colors: {
             primary: '#ffff',
             alt: '#ff4656',
@@ -32,6 +36,10 @@ const Projects = [
         id: 'rick',
         name: 'Rick-&-Morty',
         image: '/src/images/Rick&Morty.png',
+        font: {
+            title: "'Poppins', sans-serif",
+            body: "'Poppins', sans-serif"
+        },
         colors: {
             primary: '#ffff',
             alt: '#00B0C8',
@@ -61,6 +69,10 @@ const Projects = [
         id: 'cart',
         name: 'Shopping-Cart',
         image: '/src/images/shopping-cart.png',
+        font: {
+            title: "'Rubik', sans-serif",
+            body: "'Rubik', sans-serif"
+        },
         colors: {
             primary: '#f8f9fa',
             alt: '#d90429',

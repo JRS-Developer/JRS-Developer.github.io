@@ -38,6 +38,7 @@
         ),
         url('/src/images/background-tech.svg');
     opacity: 0.5;
+    transition: transform 2s;
 }
 
 .hero-section__info {

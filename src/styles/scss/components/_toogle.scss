@@ -11,6 +11,7 @@
 
 .toogle__icon {
     flex: 0;
+    cursor: pointer;
 }
 
 .toogle-close {
@@ -19,6 +20,7 @@
     top: 0;
     padding: 1rem;
     border-radius: 100%;
+    cursor: pointer;
 }
 
 .toogle-close:active {

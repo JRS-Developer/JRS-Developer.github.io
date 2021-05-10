@@ -1,10 +1,29 @@
 .about-section {
+    position: relative;
     padding-top: calc(var(--header-height) + 3rem);
     min-height: 100vh;
     height: auto;
     display: flex;
     flex-direction: column;
     gap: 5rem;
+    z-index: var(--z-normal);
+}
+
+.about-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+            0deg,
+            var(--body-bg-color) 0%,
+            rgba(9, 9, 121, 0) 75%
+        ),
+        url('/src/images/background-tech.svg');
+    z-index: var(--z-back);
+    opacity: 0.2;
 }
 
 .about-section__container {
@@ -40,6 +59,7 @@
     font-size: var(--h3-font-size);
     padding-left: 2rem;
     padding-right: 2rem;
+    line-height: 2rem;
 
     @include from(m) {
         padding-left: 4rem;
