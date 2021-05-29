@@ -1,0 +1,15 @@
+{
+  "name": "jrs-portfolio",
+  "version": "1.0.0",
+  "description": "My portfolio",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "node-sass -w src/styles/scss -o src/styles/css --output-style compressed"
+  },
+  "keywords": [
+    "portfolio"
+  ],
+  "author": "Jose Sanchez (JRS)",
+  "license": "ISC"
+}
