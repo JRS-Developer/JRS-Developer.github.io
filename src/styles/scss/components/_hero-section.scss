@@ -1,115 +1,84 @@
 .hero-section {
-    position: relative;
-    overflow: hidden;
-}
+	position: relative;
+	overflow: hidden;
 
-.hero-section__background {
-    display: none;
-    position: absolute;
-    background-color: var(--primary-color-alt);
-    height: 100%;
-    width: 100%;
-    top: 0;
-    clip-path: polygon(0 38%, 0% 100%, 100% 100%, 100% 440px);
+	@include from(s) {
+		padding: 0 2rem;
+	}
 
-    @include from(m) {
-        display: block;
-        clip-path: polygon(0 40%, 0% 100%, 100% 100%, 100% 500px);
-    }
-
-    @include from(l) {
-        clip-path: polygon(0 40%, 0% 100%, 100% 100%, 100% 480px);
-    }
-
-    @include from(lx) {
-        clip-path: polygon(0 40%, 0% 100%, 100% 100%, 100% 520px);
-    }
+	@include from(lx) {
+		padding: 0;
+	}
 }
 
 .hero-section__icons {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    background-image: linear-gradient(
-            0deg,
-            var(--body-bg-color) 30%,
-            rgba(9, 9, 121, 0) 75%
-        ),
-        url('/src/images/background-tech.svg');
-    opacity: 0.5;
-    transition: transform 2s;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	background-image: linear-gradient(
+			0deg,
+			var(--body-bg-color) 30%,
+			rgba(9, 9, 121, 0) 75%
+		),
+		url('/src/images/background-tech.svg');
+	opacity: 0.5;
+	transition: transform 2s;
 }
 
 .hero-section__info {
-    height: 100%;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    grid-template-columns: auto;
+	height: 100%;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	grid-template-columns: auto;
 
-    @include from(s) {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
+	@include from(s) {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
 }
 
 .hero-section__text {
-    color: var(--primary-color);
-    place-self: center;
-    height: 50%;
-    width: 100%;
-    margin-left: 3rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+	color: var(--primary-color);
+	place-self: center;
+	height: 50%;
+	width: 100%;
+	margin-left: 3rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 
-    @include from(s) {
-        margin-top: 0;
-        margin-left: 0;
-        width: auto;
-        height: auto;
-        display: block;
-    }
-
-    @include from(m) {
-        margin-top: 4rem;
-        margin-left: 0;
-        width: auto;
-        height: auto;
-        display: block;
-    }
+	@include from(s) {
+		margin-top: 0;
+		margin-left: 0;
+		width: auto;
+		height: auto;
+		display: block;
+	}
 }
 
 .hero-section__title {
-    font-size: var(--big-font-size);
-    margin-bottom: 1rem;
+	font-size: var(--big-font-size);
+	margin-bottom: 1rem;
 
-    @include from(s) {
-        margin-bottom: 1rem;
-    }
+	@include from(s) {
+		margin-bottom: 1rem;
+	}
 }
 
 .hero-section__title > br:first-of-type {
-    display: none;
+	display: none;
 
-    @include from(s) {
-        display: inline;
-    }
+	@include from(s) {
+		display: inline;
+	}
 }
 
 .hero-section__title > strong {
-    color: var(--primary-color-alt);
-
-    @include from(m) {
-        color: var(--body-bg-color);
-    }
+	color: var(--primary-color-alt);
 }
 
 .hero-section__subtitle > strong {
-    color: var(--primary-color-alt);
-
-    @include from(m) {
-        color: var(--body-bg-color);
-    }
+	color: var(--primary-color-alt);
 }

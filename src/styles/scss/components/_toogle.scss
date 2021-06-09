@@ -1,28 +1,28 @@
 .toogle {
-    height: 100%;
-    display: flex;
-    justify-content: flex-end;
-    padding-right: 1rem;
+	height: 100%;
+	display: flex;
+	justify-content: flex-end;
+	padding-right: var(--padding-short);
 
-    @include from(s) {
-        display: none;
-    }
+	@include from(s) {
+		display: none;
+	}
 }
 
 .toogle__icon {
-    flex: 0;
-    cursor: pointer;
+	flex: 0;
+	cursor: pointer;
 }
 
 .toogle-close {
-    position: absolute;
-    right: 0;
-    top: 0;
-    padding: 1rem;
-    border-radius: 100%;
-    cursor: pointer;
+	position: absolute;
+	right: 0;
+	top: 0;
+	padding: 1rem;
+	border-radius: 100%;
+	cursor: pointer;
 }
 
 .toogle-close:active {
-    background-color: rgba(0, 0, 0, 0.5);
+	background-color: rgba(0, 0, 0, 0.5);
 }
