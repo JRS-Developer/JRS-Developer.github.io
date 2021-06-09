@@ -19,12 +19,14 @@ const PrincipalTheme = {
 	},
 };
 
+const ContactForm = document.getElementById('contact-form');
 // Events
 
 document.addEventListener('DOMContentLoaded', () => {
 	ChangeHeader();
 	AddProjects();
 	ShowProjects();
+	LoadForm();
 });
 
 document.addEventListener('scroll', () => {
@@ -224,5 +226,26 @@ const ShowProjects = () => {
 const MoveBackgroundIcons = () => {
 	if (window.scrollY < 200) {
 		HeroIcons.style.transform = `translateY(${window.scrollY}px)`;
+	}
+};
+
+const LoadForm = () => {
+	ContactForm.addEventListener('submit', (e) => {
+		e.preventDefault();
+		SendForm();
+	});
+};
+
+const SendForm = async () => {
+	try {
+		const MyFormData = new FormData(ContactForm);
+		const Data = await fetch(ContactForm.action, {
+			method: 'POST',
+			body: MyFormData,
+		});
+		const Response = await JSON.parse(Data);
+		console.log(Response);
+	} catch (error) {
+		console.log(`Hay un error mano: ${error}`);
 	}
 };
