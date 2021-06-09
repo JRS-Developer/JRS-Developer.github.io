@@ -19,14 +19,12 @@ const PrincipalTheme = {
 	},
 };
 
-const ContactForm = document.getElementById('contact-form');
 // Events
 
 document.addEventListener('DOMContentLoaded', () => {
 	ChangeHeader();
 	AddProjects();
 	ShowProjects();
-	LoadForm();
 });
 
 document.addEventListener('scroll', () => {
@@ -61,7 +59,7 @@ const AddProjects = () => {
             `;
 			DemosContainer.insertAdjacentHTML('beforebegin', SelectedItem);
 
-			// Aqui busco el unico elemento que tiene selected y lo paso a changetheme para en caso de dar click se cambie el tema de la página.
+			// Aquí busco el único elemento que tiene selected y lo paso a changetheme para en caso de dar click se cambie el tema de la página.
 			const ClickSelectedItem = document.querySelector(
 				'.hero-section__demo-item--selected'
 			);
@@ -173,7 +171,7 @@ const ReplaceProject = (demo, icon) => {
 
 const ShowProjects = () => {
 	Projects.forEach((project) => {
-		// Se crean los divs
+		// Se crean los div
 		const Container = document.createElement('div');
 		Container.className = 'project-container';
 		const ProjectInfo = document.createElement('div');
@@ -181,7 +179,7 @@ const ShowProjects = () => {
 		const ProjectTechnologies = document.createElement('div');
 		ProjectTechnologies.className = 'project-technologies';
 
-		// Se crean los elementos de cada tecnologia que posea el proyecto
+		// Se crean los elementos de cada tecnología que posea el proyecto
 		project.tech.forEach((tech) => {
 			const TechInfo = `
             <div class="project-technology">
@@ -196,12 +194,12 @@ const ShowProjects = () => {
 			ProjectTechnologies.insertAdjacentHTML('beforeend', TechInfo);
 		});
 
-		// Se incertan los elementos
+		// Se insertan los elementos
 		ProjectInfo.appendChild(ProjectTechnologies);
 		Container.appendChild(ProjectInfo);
 		ProjectGrid.appendChild(Container);
 
-		// Se coloca un boton para visitar el proyecto
+		// Se coloca un botón para visitar el proyecto
 		const ProjectVisit = `
         <button class="button project__visit__container">
             <a href=${project.link} target="_blank" class="project__visit">Visit Project</a>
@@ -226,26 +224,5 @@ const ShowProjects = () => {
 const MoveBackgroundIcons = () => {
 	if (window.scrollY < 200) {
 		HeroIcons.style.transform = `translateY(${window.scrollY}px)`;
-	}
-};
-
-const LoadForm = () => {
-	ContactForm.addEventListener('submit', (e) => {
-		e.preventDefault();
-		SendForm();
-	});
-};
-
-const SendForm = async () => {
-	try {
-		const MyFormData = new FormData(ContactForm);
-		const Data = await fetch(ContactForm.action, {
-			method: 'POST',
-			body: MyFormData,
-		});
-		const Response = await JSON.parse(Data);
-		console.log(Response);
-	} catch (error) {
-		console.log(`Hay un error mano: ${error}`);
 	}
 };
