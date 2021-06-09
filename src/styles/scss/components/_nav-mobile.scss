@@ -1,50 +1,49 @@
 .nav-mobile {
-    height: 100%;
-    width: 100%;
-    background-color: var(--body-bg-color);
-    position: fixed;
-    left: 100%;
-    z-index: var(--z-front);
-    transition: all 0.5s;
+	height: 100%;
+	width: 100%;
+	background-color: var(--body-bg-color);
+	position: fixed;
+	left: 100%;
+	z-index: var(--z-front);
+	transition: all 0.5s;
 
-    @include from(s) {
-        display: none;
-    }
+	@include from(s) {
+		display: none;
+	}
 }
 
 .nav-mobile--open {
-    left: 0;
-    transition: all 0.5s;
+	left: 0;
+	transition: all 0.5s;
 }
 
 .navbar-mobile {
-    height: 100%;
-    width: 100%;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 2rem;
+	height: 100%;
+	width: 100%;
+	padding: 0;
+	display: grid;
+	align-content: center;
+	gap: 2rem;
 }
 
 .navbar-mobile-item {
-    text-align: center;
-    height: 3rem;
-    display: flex;
+	text-align: center;
+	height: 3rem;
+	display: flex;
 }
 
 .navbar-mobile__link {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: var(--primary-color);
-    width: 100%;
-    height: 100%;
-    font-size: var(--h1-font-size);
-    font-weight: 600;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: var(--primary-color);
+	width: 100%;
+	height: 100%;
+	font-size: var(--h1-font-size);
+	font-weight: 600;
 }
 
 .navbar-mobile__link--active {
-    background-color: var(--primary-color-alt);
-    color: var(--body-bg-color);
+	background-color: var(--primary-color-alt);
+	color: var(--body-bg-color);
 }

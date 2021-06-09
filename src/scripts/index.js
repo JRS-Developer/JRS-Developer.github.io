@@ -53,6 +53,7 @@ const AddProjects = () => {
                             <img
                                 src=${Project.image}
                                 alt=${Project.name}
+								loading="lazy"
                             />
                         </div>
             `;
@@ -73,11 +74,13 @@ const AddProjects = () => {
                                         class="demo__icon--next"
                                         src="/src/images/next-icon.svg"
                                         alt="Next"
+										loading="lazy"
                                     />
                                 </div>
                                 <img
                                     src=${Project.image}
                                     alt=${Project.name}
+									loading="lazy"
                                 />
                             </div>
         `;
@@ -134,7 +137,7 @@ const StartFromBegin = () => {
 	if (DemosContainer.children.length == 0) {
 		const UndoIcon = `
         <div class="demo__icon" id="demo__icon--back__container">
-            <img class="demo__icon--back" src="/src/images/left-turn-arrow.svg" alt="undo"/>
+            <img class="demo__icon--back" src="/src/images/left-turn-arrow.svg" alt="undo" loading="lazy"/>
         </div>
         `;
 		DemosContainer.innerHTML = UndoIcon;
@@ -184,6 +187,7 @@ const ShowProjects = () => {
 					class="project-technology__img"
 					src=${tech.image}
 					alt=${tech.name}
+					loading="lazy"
 				/>
 			</div>
             `;
@@ -209,6 +213,7 @@ const ShowProjects = () => {
 			class="project__img"
 			src=${project.image}
 			alt=${project.name}
+			loading="lazy"
 		/>
         `;
 

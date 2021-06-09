@@ -11,5 +11,9 @@
     "portfolio"
   ],
   "author": "Jose Sanchez (JRS)",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.7.2"
+  }
 }

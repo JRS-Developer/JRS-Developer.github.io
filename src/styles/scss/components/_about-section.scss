@@ -3,9 +3,6 @@
 	padding-top: calc(var(--header-height) + 3rem);
 	min-height: 100vh;
 	height: auto;
-	display: flex;
-	flex-direction: column;
-	gap: 5rem;
 	z-index: var(--z-normal);
 }
 
@@ -27,6 +24,7 @@
 }
 
 .about-section__container {
+	margin-top: var(--margin-normal);
 	display: grid;
 	height: 100%;
 
