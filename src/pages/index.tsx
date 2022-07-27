@@ -6,7 +6,7 @@ import {
   FlexProps,
   Heading,
   Icon,
-  SimpleGrid,
+  IconButton,
   Text,
 } from "@chakra-ui/react";
 import type { NextPage } from "next";
@@ -14,7 +14,9 @@ import Image from "next/image";
 import NextLink from "next/link";
 import { HiChevronDoubleDown, HiMail, HiDocumentText } from "react-icons/hi";
 import MyPhoto from "@/assets/images/my-photo.png";
-import { projects } from "@/data/projects";
+import ProjectList from "@/components/ProjectList";
+import ContactForm from "@/components/ContactForm";
+import { socialLinks } from "@/data/socialLinks";
 
 interface SectionWrapperProps extends FlexProps {}
 
@@ -30,7 +32,7 @@ const SectionWrapper = ({ children, ...props }: SectionWrapperProps) => {
 
 const Home: NextPage = () => {
   return (
-    <Flex bg="gray.50" minH="100vh" direction={"column"}>
+    <Flex bg="white" minH="100vh" direction={"column"}>
       <Box
         as="header"
         position="sticky"
@@ -154,62 +156,56 @@ const Home: NextPage = () => {
           Projects
         </Heading>
 
-        <SimpleGrid
-          columns={{
-            sm: 2,
-          }}
+        <ProjectList />
+      </SectionWrapper>
+
+      <SectionWrapper px="16" py="16">
+        <Heading id="contact">Contact me</Heading>
+
+        <Flex
+          gap="8"
+          justifyContent="center"
+          alignItems="center"
+          mt="8"
+          wrap="wrap"
         >
-          {projects.map(({ desc, title, thumbnail }) => (
-            <Box
-              key={title}
-              bg="green.500"
-              w="100%"
-              position="relative"
-              h="600px"
-              // zIndex="0"
-            >
-              <Image
-                src={thumbnail}
-                alt={title}
-                layout="fill"
-                // objectFit="cover"
-              />
-              <Box
-                data-peer
-                h="100%"
-                w="100%"
-                zIndex={1}
-                position="absolute"
-                top="0"
-                left="0"
-              ></Box>
-              <Flex
-                direction="column"
-                align="center"
-                position="absolute"
-                top="0"
-                left="0"
-                p="8"
-                h="100%"
-                w="100%"
-                bg="gray.900"
-                color="gray.50"
-                clipPath="circle(0% at 0 0)"
-                transition="all .5s ease-in-out"
-                _hover={{
-                  clipPath: "circle(200% at 0 0)",
-                }}
-                _peerHover={{
-                  clipPath: "circle(200% at 0 0)",
-                  transition: "all .5s ease-in-out",
-                  zIndex: "2",
-                }}
-              >
-                <Heading>{title}</Heading>
-              </Flex>
-            </Box>
-          ))}
-        </SimpleGrid>
+          <Flex
+            direction={{
+              sm: "row",
+              md: "column",
+            }}
+            gap="12"
+          >
+            {socialLinks.map(({ icon: Icon, label, link }) => (
+              <NextLink href={link} passHref key={`contact-${label}`}>
+                <IconButton
+                  as="a"
+                  icon={<Icon />}
+                  aria-label={label}
+                  variant="outline"
+                  shadow="base"
+                  rounded="full"
+                  size="lg"
+                  target="_blank"
+                  rel="noopeneer noreferrer"
+                  colorScheme="green"
+                />
+              </NextLink>
+            ))}
+          </Flex>
+          <Box
+            p="8"
+            w={{
+              sm: "100%",
+              md: "auto",
+            }}
+            bg="gray.50"
+            rounded="lg"
+            shadow="md"
+          >
+            <ContactForm />
+          </Box>
+        </Flex>
       </SectionWrapper>
     </Flex>
   );
