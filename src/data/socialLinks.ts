@@ -9,17 +9,17 @@ interface SocialLinkT {
 export const socialLinks: SocialLinkT[] = [
   {
     label: "Github",
-    link: "",
+    link: "https://github.com/JRS-Developer/",
     icon: SiGithub,
   },
   {
     label: "Linkedin",
-    link: "",
+    link: "https://www.linkedin.com/in/jose-jrs/",
     icon: SiLinkedin,
   },
   {
     label: "Twitter",
-    link: "",
+    link: "https://twitter.com/joserafa_s",
     icon: SiTwitter,
   },
 ];
