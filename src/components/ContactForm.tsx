@@ -24,35 +24,35 @@ function ContactForm() {
     handleSubmit,
     register,
     formState: { errors, isSubmitting },
+    reset,
   } = useForm<FormData>();
   const toast = useToast();
 
-  const sendMessageNetlify = async (formdata: globalThis.FormData) => {
-    try {
-      await fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: formdata,
-      });
-    } catch (err) {
-      console.error(err);
+  const sendMessageNetlify = async (formdata: FormData) => {
+    const response = await fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: Object.keys(formdata)
+        .map(
+          (key) =>
+            encodeURIComponent(key) + "=" + encodeURIComponent(formdata[key])
+        )
+        .join("&"),
+    });
+
+    if (!response.ok) {
+      throw new Error(response.statusText);
     }
   };
 
   const onSubmit = async (data: FormData) => {
-    let formdata = new FormData();
-
-    // convert the object to formData
-    for (const [key, value] of Object.entries(data)) {
-      formdata.append(key, value);
-    }
-
     try {
-      await sendMessageNetlify(formdata);
+      await sendMessageNetlify(data);
       toast({
         status: "success",
         title: "Message sended successfully",
       });
+      reset();
     } catch (err) {
       toast({
         status: "error",
