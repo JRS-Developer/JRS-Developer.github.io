@@ -14,7 +14,7 @@ const Home: NextPage = () => {
       </Head>
       <HeroSection />
 
-      <SectionWrapper gap="8" showPadding>
+      <SectionWrapper gap="8" showPadding viewportHeight>
         <AboutSection />
       </SectionWrapper>
 
