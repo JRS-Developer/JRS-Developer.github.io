@@ -32,12 +32,7 @@ function ContactForm() {
     const response = await fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: Object.keys(formdata)
-        .map(
-          (key) =>
-            encodeURIComponent(key) + "=" + encodeURIComponent(formdata[key])
-        )
-        .join("&"),
+      body: new URLSearchParams(formdata as any).toString(),
     });
 
     if (!response.ok) {
