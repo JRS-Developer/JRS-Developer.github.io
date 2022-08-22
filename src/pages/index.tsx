@@ -9,18 +9,7 @@ import SectionWrapper from "@/components/Sections/SectionWrapper";
 import Head from "next/head";
 
 const Header = () => (
-  <Box
-    as="header"
-    position="sticky"
-    top="0"
-    w="100%"
-    bg="whiteAlpha.900"
-    backdropFilter="auto"
-    backdropBlur="1px"
-    boxShadow="base"
-    zIndex={100}
-    height="var(--header-height)"
-  >
+  <Box as="header">
     <Navbar />
   </Box>
 );

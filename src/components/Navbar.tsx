@@ -6,10 +6,7 @@ import {
   Icon,
   IconButton,
   Link,
-  Menu,
-  MenuButton,
-  MenuItem,
-  MenuList,
+  Collapse,
   useDisclosure,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
@@ -46,39 +43,63 @@ interface DesktopNavProps {
 
 function Navbar({ router: { asPath } }: Props) {
   const path = asPath.replace("/", "");
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <Flex
-      as="nav"
-      px={["8", "16"]}
-      alignItems="center"
-      pos="relative"
-      h="100%"
-      justifyContent="space-between"
-      borderBottom="1px"
-      borderColor={["gray.500", "none"]}
+      direction="column"
+      minH="var(--header-height)"
+      position="fixed"
+      top="0"
+      left="0"
+      w="100%"
+      zIndex={10}
+      bg="whiteAlpha.900"
+      backdropFilter="auto"
+      backdropBlur="1px"
     >
-      <NextLink href="/" passHref>
-        <Link
-          _hover={{
-            textDecor: "none",
-          }}
-        >
-          <Heading as="h1" size="sm" fontWeight="semibold">
-            José Sánchez
-          </Heading>
-        </Link>
-      </NextLink>
+      <Flex
+        px={["8", "16"]}
+        alignItems="center"
+        pos="relative"
+        flex={1}
+        justifyContent="space-between"
+        borderBottom="1px"
+        borderColor={["gray.500", "none"]}
+        minH="var(--header-height)"
+      >
+        <NextLink href="/" passHref>
+          <Link
+            _hover={{
+              textDecor: "none",
+            }}
+          >
+            <Heading as="h1" size="sm" fontWeight="semibold">
+              José Sánchez
+            </Heading>
+          </Link>
+        </NextLink>
 
-      <DesktopNav path={path} />
+        <DesktopNav path={path} />
 
-      <MobileNav />
+        <IconButton
+          icon={isOpen ? <HiX /> : <HiMenu />}
+          aria-label="Open Menu"
+          onClick={isOpen ? onClose : onOpen}
+          display={["flex", "none"]}
+          variant="ghost"
+        />
+      </Flex>
+
+      <Collapse in={isOpen} animateOpacity>
+        <MobileNav />
+      </Collapse>
     </Flex>
   );
 }
 
 const DesktopNav = ({ path }: DesktopNavProps) => (
-  <Box display={["none", "flex"]}>
+  <Box display={["none", "flex"]} as="nav">
     <Flex gap="8">
       {navLinks.map(({ link, title }) => (
         <NextLink key={title} href={link} passHref replace={true}>
@@ -109,6 +130,7 @@ const DesktopNav = ({ path }: DesktopNavProps) => (
             isExternal
             _hover={{
               opacity: 0.75,
+              color: "green.400",
             }}
           >
             <Icon as={icon} h={4} w={4} />
@@ -121,25 +143,23 @@ const DesktopNav = ({ path }: DesktopNavProps) => (
 
 const MobileNav = () => {
   return (
-    <Menu isLazy>
-      {({ isOpen }) => (
-        <>
-          <MenuButton
-            display={["flex", "none"]}
-            aria-label="Toggle Menu"
-            as={IconButton}
-            icon={isOpen ? <HiX /> : <HiMenu />}
-          />
-          <MenuList>
-            {navLinks.map(({ title, link }) => (
-              <NextLink href={link} passHref key={`mobile-${title}`}>
-                <MenuItem as="a">{title}</MenuItem>
-              </NextLink>
-            ))}
-          </MenuList>
-        </>
-      )}
-    </Menu>
+    <Flex
+      as="nav"
+      direction="column"
+      px="8"
+      py="4"
+      zIndex={100}
+      bg="whiteAlpha.800"
+      backdropFilter="auto"
+      backdropBlur="1px"
+      boxShadow="lg"
+    >
+      {navLinks.map((navLink) => (
+        <NextLink key={`${navLink.title}-mobile`} href={navLink.link} passHref>
+          <Link py="2">{navLink.title}</Link>
+        </NextLink>
+      ))}
+    </Flex>
   );
 };
 
