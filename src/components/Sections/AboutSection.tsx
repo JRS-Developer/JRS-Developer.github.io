@@ -18,7 +18,7 @@ const AboutSection = () => {
         gap="8"
       >
         <Text
-          fontSize={["md", "3xl"]}
+          fontSize={["md", "2xl"]}
           flex="1"
           maxW={["auto", "60%"]}
           textAlign="left"

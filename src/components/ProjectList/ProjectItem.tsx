@@ -5,12 +5,10 @@ import {
   Flex,
   Heading,
   HStack,
-  Icon,
   Tag,
   TagLabel,
   TagLeftIcon,
   Text,
-  Link,
   IconButton,
   Tooltip,
 } from "@chakra-ui/react";
@@ -23,31 +21,35 @@ interface Props {
   project: ProjectT;
 }
 
-function ProjectItem({ project: { desc, title, thumbnail, tech } }: Props) {
+function ProjectItem({
+  project: { desc, title, thumbnail, tech, link, repository },
+}: Props) {
   return (
     <Flex
-      bg="gray.100"
       rounded="lg"
       overflow="hidden"
-      shadow="base"
+      shadow="md"
       align="center"
-      direction={["column", "row"]}
+      direction="column"
       transition="box-shadow .2s"
       _hover={{
-        shadow: "md",
+        shadow: "lg",
         transition: "box-shadow .2s",
       }}
     >
       <Box
         pos="relative"
-        w={["100%", "600px", "800px"]}
-        h={["200px", "100%"]}
+        w="100%"
+        h="200px"
         rounded="lg"
         overflow="hidden"
+        _hover={{
+          transform: "scale 0.2",
+        }}
       >
         <Image src={thumbnail} alt={title} layout="fill" objectFit="cover" />
       </Box>
-      <Flex p="4" direction="column" gap="2">
+      <Flex p="4" direction="column" gap="2" justify="space-evenly">
         <Heading as="h3" size={["sm", "md"]} noOfLines={1}>
           {title}
         </Heading>
@@ -66,7 +68,7 @@ function ProjectItem({ project: { desc, title, thumbnail, tech } }: Props) {
         </Flex>
         <Text fontSize={["sm", "md"]}>{desc}</Text>
         <HStack spacing="4" alignItems="center" wrap="wrap" mt="4">
-          <NextLink href="#" passHref>
+          <NextLink href={link || "#"} passHref>
             <Button
               colorScheme="teal"
               rightIcon={<HiExternalLink />}
@@ -78,7 +80,7 @@ function ProjectItem({ project: { desc, title, thumbnail, tech } }: Props) {
             </Button>
           </NextLink>
           <Tooltip label="Check Github" shouldWrapChildren hasArrow>
-            <NextLink href="/#" passHref>
+            <NextLink href={repository || "#"} passHref>
               <IconButton
                 aria-label="Go to github repository"
                 icon={<SiGithub />}
