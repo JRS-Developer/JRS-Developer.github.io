@@ -12,9 +12,10 @@ const Home: NextPage = () => {
       <Head>
         <title>José Sánchez | Full-Stack Web Developer</title>
       </Head>
+
       <HeroSection />
 
-      <SectionWrapper gap="8" showPadding viewportHeight>
+      <SectionWrapper gap="8" showPadding>
         <AboutSection />
       </SectionWrapper>
 

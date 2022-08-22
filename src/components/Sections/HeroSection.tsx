@@ -13,6 +13,7 @@ const HeroSection = () => {
       alignItems="center"
       position="relative"
       p={["4", "0"]}
+      viewportHeight
     >
       <Heading
         textAlign="center"
