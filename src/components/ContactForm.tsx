@@ -29,10 +29,15 @@ function ContactForm() {
   const toast = useToast();
 
   const sendMessageNetlify = async (formdata: FormData) => {
+    const data = {
+      "form-name": "contact",
+      ...formdata,
+    };
+
     const response = await fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(formdata as any).toString(),
+      body: new URLSearchParams(data as any).toString(),
     });
 
     if (!response.ok) {
@@ -66,9 +71,6 @@ function ContactForm() {
       spacing="4"
       noValidate
     >
-      {/* This is for Netlify */}
-      <input type="hidden" name="form-name" value="contact" />
-
       <FormControl isInvalid={Boolean(errors.name)} isRequired>
         <FormLabel htmlFor="name">Name</FormLabel>
         <InputGroup>
