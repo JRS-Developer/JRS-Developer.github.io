@@ -1,7 +1,7 @@
-import ValorantImg from "@/assets/images/projects/Valorant.jpg";
-import DogsJImg from "@/assets/images/projects/Dogs_J.jpg";
-import CountriesImg from "@/assets/images/projects/Countries.jpg";
-import RickAndMortyImg from "@/assets/images/projects/Rick_&_Morty.jpg";
+import ValorantImg from "@/assets/images/projects/Valorant-min.jpg";
+import DogsJImg from "@/assets/images/projects/Dogs_J-min.jpg";
+import CountriesImg from "@/assets/images/projects/Countries-min.jpg";
+import RickAndMortyImg from "@/assets/images/projects/Rick_&_Morty-min.jpg";
 import { StaticImageData } from "next/image";
 import {
   SiCss3,
