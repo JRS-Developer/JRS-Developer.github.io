@@ -24,6 +24,7 @@ function ContactForm() {
     handleSubmit,
     register,
     formState: { errors, isSubmitting },
+    reset,
   } = useForm<FormData>();
   const toast = useToast();
 
@@ -32,10 +33,11 @@ function ContactForm() {
       await fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: formdata,
+        body: new URLSearchParams(formdata as any).toString(),
       });
     } catch (err) {
       console.error(err);
+      throw err;
     }
   };
 
@@ -53,6 +55,7 @@ function ContactForm() {
         status: "success",
         title: "Message sended successfully",
       });
+      reset();
     } catch (err) {
       toast({
         status: "error",
