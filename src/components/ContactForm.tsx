@@ -7,6 +7,7 @@ import {
   InputGroup,
   InputLeftElement,
   Textarea,
+  useToast,
   VStack,
 } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
@@ -24,8 +25,41 @@ function ContactForm() {
     register,
     formState: { errors, isSubmitting },
   } = useForm<FormData>();
+  const toast = useToast();
 
-  const onSubmit = () => {};
+  const sendMessageNetlify = async (formdata: globalThis.FormData) => {
+    try {
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: formdata,
+      });
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const onSubmit = async (data: FormData) => {
+    let formdata = new FormData();
+
+    // convert the object to formData
+    for (const [key, value] of Object.entries(data)) {
+      formdata.append(key, value);
+    }
+
+    try {
+      await sendMessageNetlify(formdata);
+      toast({
+        status: "success",
+        title: "Message sended successfully",
+      });
+    } catch (err) {
+      toast({
+        status: "error",
+        title: "An error has ocurred sending your message",
+      });
+    }
+  };
 
   return (
     <VStack
@@ -35,6 +69,7 @@ function ContactForm() {
       data-netlify="true"
       onSubmit={handleSubmit(onSubmit)}
       spacing="4"
+      noValidate
     >
       {/* This is for Netlify */}
       <input type="hidden" name="form-name" value="contact" />
