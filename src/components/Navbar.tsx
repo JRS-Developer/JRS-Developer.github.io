@@ -46,55 +46,57 @@ function Navbar({ router: { asPath } }: Props) {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <Flex
-      direction="column"
-      minH="var(--header-height)"
-      position="fixed"
-      top="0"
-      left="0"
-      w="100%"
-      zIndex={10}
-      bg="whiteAlpha.900"
-      backdropFilter="auto"
-      backdropBlur="1px"
-    >
+    <Box as="header">
       <Flex
-        px={["8", "16"]}
-        alignItems="center"
-        pos="relative"
-        flex={1}
-        justifyContent="space-between"
-        borderBottom="1px"
-        borderColor={["gray.500", "none"]}
+        direction="column"
         minH="var(--header-height)"
+        position="fixed"
+        top="0"
+        left="0"
+        w="100%"
+        zIndex={10}
+        bg="whiteAlpha.900"
+        backdropFilter="auto"
+        backdropBlur="1px"
       >
-        <NextLink href="/" passHref>
-          <Link
-            _hover={{
-              textDecor: "none",
-            }}
-          >
-            <Heading as="h1" size="sm" fontWeight="semibold">
-              José Sánchez
-            </Heading>
-          </Link>
-        </NextLink>
+        <Flex
+          px={["8", "16"]}
+          alignItems="center"
+          pos="relative"
+          flex={1}
+          justifyContent="space-between"
+          borderBottom="1px"
+          borderColor={["gray.500", "none"]}
+          minH="var(--header-height)"
+        >
+          <NextLink href="/" passHref>
+            <Link
+              _hover={{
+                textDecor: "none",
+              }}
+            >
+              <Heading as="h1" size="sm" fontWeight="semibold">
+                José Sánchez
+              </Heading>
+            </Link>
+          </NextLink>
 
-        <DesktopNav path={path} />
+          <DesktopNav path={path} />
 
-        <IconButton
-          icon={isOpen ? <HiX /> : <HiMenu />}
-          aria-label="Open Menu"
-          onClick={isOpen ? onClose : onOpen}
-          display={["flex", "none"]}
-          variant="ghost"
-        />
+          <IconButton
+            icon={isOpen ? <HiX /> : <HiMenu />}
+            aria-label="Open Menu"
+            onClick={isOpen ? onClose : onOpen}
+            display={["flex", "none"]}
+            variant="ghost"
+          />
+        </Flex>
+
+        <Collapse in={isOpen} animateOpacity>
+          <MobileNav />
+        </Collapse>
       </Flex>
-
-      <Collapse in={isOpen} animateOpacity>
-        <MobileNav />
-      </Collapse>
-    </Flex>
+    </Box>
   );
 }
 

@@ -37,19 +37,28 @@ function ProjectItem({
         transition: "box-shadow .2s",
       }}
     >
-      <Box
-        pos="relative"
-        w="100%"
-        h="200px"
-        rounded="lg"
-        overflow="hidden"
-        _hover={{
-          transform: "scale 0.2",
-        }}
-      >
-        <Image src={thumbnail} alt={title} layout="fill" objectFit="cover" />
+      <Box w="full" overflow="hidden" rounded="lg">
+        <Box
+          pos="relative"
+          w="100%"
+          h="200px"
+          overflow="hidden"
+          transition="transform .2s"
+          _hover={{
+            transform: "scale(1.1) rotate(2deg)",
+            transition: "transform .2s",
+          }}
+        >
+          <Image
+            src={thumbnail}
+            alt={title}
+            layout="fill"
+            objectFit="cover"
+            placeholder="blur"
+          />
+        </Box>
       </Box>
-      <Flex p="4" direction="column" gap="2" justify="space-evenly">
+      <Flex p="4" direction="column" gap="2" flex="1">
         <Heading as="h3" size={["sm", "md"]} noOfLines={1}>
           {title}
         </Heading>
@@ -67,7 +76,13 @@ function ProjectItem({
           ))}
         </Flex>
         <Text fontSize={["sm", "md"]}>{desc}</Text>
-        <HStack spacing="4" alignItems="center" wrap="wrap" mt="4">
+        <HStack
+          spacing="4"
+          alignItems="center"
+          wrap="wrap"
+          mt="4"
+          marginTop="auto"
+        >
           <NextLink href={link || "#"} passHref>
             <Button
               colorScheme="teal"

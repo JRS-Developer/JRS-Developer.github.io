@@ -9,7 +9,7 @@ type Props = {
 function ProjectList({ projects }: Props) {
   return (
     <SimpleGrid
-      columns={{ sm: 1, lg: 2 }}
+      columns={{ sm: 1, md: 2 }}
       rowGap="8"
       gap="4"
       as="ul"
@@ -18,9 +18,7 @@ function ProjectList({ projects }: Props) {
       }}
     >
       {projects.map((project) => (
-        <Box key={project.title} as="li">
-          <ProjectItem project={project} />
-        </Box>
+        <ProjectItem project={project} key={project.title} />
       ))}
     </SimpleGrid>
   );

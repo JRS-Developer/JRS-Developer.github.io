@@ -46,8 +46,9 @@ const AboutSection = () => {
         >
           <Image
             src={MyPhoto}
-            alt="My personal photo, it's not the best but it works"
+            alt="My personal photo"
             layout="fill"
+            placeholder="blur"
           />
         </Box>
       </Flex>
